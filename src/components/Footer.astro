@@ -1,0 +1,59 @@
+---
+import { PRIMARY_NAV, withBase } from '../lib/site';
+
+const legalLinks = [
+  { href: 'privacy-policy/', label: 'Privacy Policy' },
+  { href: 'terms/', label: 'Terms of Use' },
+  { href: 'disclaimer/', label: 'Disclaimer' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-heading">Stripchat Tokens Guide</p>
+        <p>
+          An independent educational website about legitimate ways to buy and use
+          Stripchat Tokens safely. We explain official purchasing practices,
+          common scams, and payment troubleshooting in plain language.
+        </p>
+      </div>
+      <nav aria-label="Guides">
+        <p class="footer-heading">Guides</p>
+        <ul class="footer-nav">
+          {PRIMARY_NAV.map((item) => (
+            <li><a href={withBase(item.href)}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="footer-heading">Legal</p>
+        <ul class="footer-nav">
+          {legalLinks.map((item) => (
+            <li><a href={withBase(item.href)}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-legal">
+      <p>
+        <strong>Independence notice:</strong> This website is independent and is
+        not affiliated with, sponsored by, endorsed by, or officially connected
+        with Stripchat. Any reference to Stripchat is for descriptive and
+        informational purposes only.
+      </p>
+      <p>
+        <strong>Adults only:</strong> The platform discussed on this site is
+        adult-oriented. This website is intended for readers aged 18 or older
+        and contains no explicit content.
+      </p>
+      <p>
+        © 2026 Stripchat Tokens Guide. Educational content only — always verify
+        details against the platform's current official terms, help center, and
+        billing support.
+      </p>
+    </div>
+  </div>
+</footer>

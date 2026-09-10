@@ -1,0 +1,110 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import {
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_LOCALE,
+  SITE_LANGUAGE,
+  canonicalUrl,
+} from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Site-relative path with trailing slash, e.g. "" or "legal-ways-to-get-stripchat-tokens/" */
+  path: string;
+  /** Path (relative to site root) of the social preview image */
+  ogImage?: string;
+  ogImageAlt?: string;
+  type?: 'website' | 'article';
+  dateModified?: string;
+  schema?: Record<string, unknown>[];
+  currentNav?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage = 'images/og-cover.png',
+  ogImageAlt = 'Abstract illustration of a shield and digital tokens representing safe token purchases',
+  type = 'website',
+  dateModified,
+  schema = [],
+  currentNav = '',
+  noindex = false,
+} = Astro.props;
+
+const canonical = canonicalUrl(path);
+const ogImageAbs = canonicalUrl(ogImage);
+const fullTitle = title;
+---
+
+<!doctype html>
+<html lang={SITE_LANGUAGE}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    <meta name="theme-color" content="#0c1226" />
+    <meta name="author" content={`${SITE_NAME} — ${SITE_TAGLINE}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content={SITE_LOCALE} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbs} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+
+    {dateModified && <meta property="article:modified_time" content={dateModified} />}
+
+    {schema.map((entry) => (
+      <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+    ))}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header currentNav={currentNav} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      // Accessible mobile navigation toggle (progressive enhancement).
+      const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      toggle?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('open') ?? false;
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav?.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle?.setAttribute('aria-expanded', 'false');
+          toggle?.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

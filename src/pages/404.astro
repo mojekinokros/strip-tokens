@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/site';
+
+const title = 'Page Not Found | Stripchat Tokens Guide';
+const description =
+  'The page you requested could not be found. Return to the homepage or browse the token buying and safety guides.';
+---
+
+<BaseLayout title={title} description={description} path="404/" noindex>
+  <section class="not-found" aria-labelledby="page-title">
+    <div class="container">
+      <p class="code" aria-hidden="true">404</p>
+      <h1 id="page-title">That page doesn&rsquo;t exist</h1>
+      <p class="lead" style="max-width: 36rem; margin: 0 auto 1.6rem;">
+        The address may be mistyped, or the page may have moved. Try one of the
+        guides below instead \u2014 every legitimate path on this site starts
+        from the homepage.
+      </p>
+      <div class="cta-row" style="justify-content: center;">
+        <a class="btn btn-primary" href={withBase('')}>Go to the Homepage</a>
+      </div>
+      <div class="related-grid" style="text-align: left; margin-top: 2rem;">
+        <a class="related-card" href={withBase('legal-ways-to-get-stripchat-tokens/')}>
+          <strong>Legal methods guide</strong>
+          <span>Authorized flows, receipts, security, and budgeting.</span>
+        </a>
+        <a class="related-card" href={withBase('stripchat-token-scams-and-safety/')}>
+          <strong>Scams &amp; safety</strong>
+          <span>Warning signs, phishing patterns, and recovery steps.</span>
+        </a>
+        <a class="related-card" href={withBase('stripchat-tokens-payment-faq/')}>
+          <strong>Payment FAQ</strong>
+          <span>Failed payments, missing balances, and support escalation.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,24 @@
+{
+  "name": "strip-tokens-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent educational website about legal ways to get and use Stripchat Tokens safely.",
+  "scripts": {
+    "dev": "ASTRO_BASE=/ astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "lint": "node scripts/audit.mjs",
+    "check": "npm run typecheck && npm run lint"
+  },
+  "dependencies": {
+    "astro": "^5.13.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

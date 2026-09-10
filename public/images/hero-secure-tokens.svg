@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 640" role="img" aria-label="Illustration of a shield protecting digital tokens above a secure checkout screen">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16204a"/>
+      <stop offset="1" stop-color="#0a0f24"/>
+    </linearGradient>
+    <linearGradient id="hshield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="hcoin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="hcoin2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#0ea5c4"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="0.5" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="880" height="640" rx="24" fill="url(#hbg)"/>
+  <rect x="0" y="0" width="880" height="640" rx="24" fill="url(#hglow)"/>
+  <g stroke="#2a3568" stroke-width="1.5" opacity="0.7">
+    <line x1="60" y1="120" x2="820" y2="120"/>
+    <line x1="60" y1="520" x2="820" y2="520"/>
+  </g>
+  <!-- checkout card mock -->
+  <g>
+    <rect x="80" y="380" width="280" height="170" rx="18" fill="#111833" stroke="#2a3568" stroke-width="2"/>
+    <circle cx="112" cy="414" r="7" fill="#fb7185"/>
+    <circle cx="134" cy="414" r="7" fill="#fbbf24"/>
+    <circle cx="156" cy="414" r="7" fill="#34d399"/>
+    <rect x="104" y="438" width="180" height="14" rx="7" fill="#2a3568"/>
+    <rect x="104" y="464" width="232" height="14" rx="7" fill="#202a55"/>
+    <rect x="104" y="490" width="150" height="14" rx="7" fill="#202a55"/>
+    <rect x="104" y="512" width="110" height="22" rx="11" fill="none" stroke="#34d399" stroke-width="2"/>
+    <circle cx="122" cy="523" r="5" fill="#34d399"/>
+    <rect x="134" y="519" width="60" height="8" rx="4" fill="#34d399" opacity="0.7"/>
+  </g>
+  <!-- shield -->
+  <g>
+    <path d="M440 118 L608 176 V326 C608 448 532 534 440 576 C348 534 272 448 272 326 V176 Z" fill="#0c1226" stroke="url(#hshield)" stroke-width="10"/>
+    <path d="M440 150 L576 196 V322 C576 424 514 494 440 530 C366 494 304 424 304 322 V196 Z" fill="none" stroke="#2a3568" stroke-width="2"/>
+    <path d="M372 322 L420 372 L514 262" fill="none" stroke="#34d399" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- coins -->
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-weight="800" text-anchor="middle">
+    <circle cx="690" cy="180" r="58" fill="url(#hcoin)" stroke="#c4b5fd" stroke-width="4"/>
+    <circle cx="690" cy="180" r="44" fill="none" stroke="#e9e4ff" stroke-width="2" opacity="0.7"/>
+    <text x="690" y="200" font-size="52" fill="#fff">T</text>
+    <circle cx="176" cy="212" r="44" fill="url(#hcoin2)" stroke="#a5f3fc" stroke-width="4"/>
+    <circle cx="176" cy="212" r="32" fill="none" stroke="#e0fbff" stroke-width="2" opacity="0.7"/>
+    <text x="176" y="227" font-size="38" fill="#04202a">T</text>
+    <circle cx="726" cy="470" r="48" fill="url(#hcoin2)" stroke="#a5f3fc" stroke-width="4"/>
+    <circle cx="726" cy="470" r="35" fill="none" stroke="#e0fbff" stroke-width="2" opacity="0.7"/>
+    <text x="726" y="486" font-size="42" fill="#04202a">T</text>
+    <circle cx="470" cy="470" r="34" fill="url(#hcoin)" stroke="#c4b5fd" stroke-width="3" opacity="0.95"/>
+    <text x="470" y="483" font-size="30" fill="#fff">T</text>
+  </g>
+  <!-- lock badge -->
+  <g>
+    <circle cx="620" cy="400" r="40" fill="#111833" stroke="#22d3ee" stroke-width="3"/>
+    <rect x="606" y="398" width="28" height="24" rx="5" fill="#22d3ee"/>
+    <path d="M611 398 v-6 a9 9 0 0 1 18 0 v6" fill="none" stroke="#22d3ee" stroke-width="5"/>
+  </g>
+  <g fill="#a78bfa" opacity="0.8">
+    <circle cx="120" cy="300" r="5"/>
+    <circle cx="760" cy="300" r="5"/>
+    <circle cx="330" cy="90" r="4"/>
+    <circle cx="560" cy="90" r="4"/>
+  </g>
+</svg>

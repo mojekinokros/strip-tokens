@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mojekinokros.github.io/strip-tokens/sitemap.xml

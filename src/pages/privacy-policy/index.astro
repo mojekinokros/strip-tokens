@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { canonicalUrl } from '../../lib/site';
+
+const title = 'Privacy Policy | Stripchat Tokens Guide';
+const description =
+  'How this independent educational website handles privacy: no accounts, no tracking beyond standard hosting logs, and embedded-video notes.';
+const path = 'privacy-policy/';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('') },
+      { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: canonicalUrl(path) },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs current="Privacy Policy" />
+  <section class="article-hero" aria-labelledby="page-title">
+    <div class="container article-body">
+      <h1 id="page-title">Privacy Policy</h1>
+      <div class="notice notice-warning" role="note">
+        <p class="notice-title"><span class="notice-icon" aria-hidden="true">⚠</span> Template notice</p>
+        <p>
+          This is a concise general template. The site operator should have it
+          reviewed and adapted to the operator's jurisdiction, hosting setup,
+          and actual data practices before treating it as final.
+        </p>
+      </div>
+      <p><strong>Last updated:</strong> September 10, 2026.</p>
+      <h2>What this site collects</h2>
+      <p>
+        This website is a static educational resource. It does not offer user
+        accounts, does not operate a newsletter, and does not ask visitors to
+        submit personal information. There are no contact forms that transmit
+        data anywhere.
+      </p>
+      <h2>Hosting and standard logs</h2>
+      <p>
+        Like nearly all websites, the hosting provider (GitHub Pages) may
+        process standard technical data needed to deliver pages, such as IP
+        addresses, requested URLs, timestamps, and user-agent strings in server
+        logs. This processing is governed by the hosting provider's own
+        policies, which visitors should consult for details.
+      </p>
+      <h2>Embedded video</h2>
+      <p>
+        The homepage embeds a video player from YouTube. Loading or playing the
+        embedded video may allow YouTube (Google) to collect data according to
+        its own privacy policy, including through cookies. Visitors who prefer
+        not to load third-party content can simply not play the embedded video.
+      </p>
+      <h2>Cookies and analytics</h2>
+      <p>
+        This site itself sets no cookies and runs no analytics trackers. If
+        analytics or additional embeds are added in the future, this policy
+        should be updated to describe them before launch.
+      </p>
+      <h2>Children and age</h2>
+      <p>
+        Because the site discusses an adult-oriented platform, it is intended
+        for adult readers aged 18 or older and is not directed at children.
+      </p>
+      <h2>Changes to this policy</h2>
+      <p>
+        If the site's practices change, this page will be updated with a new
+        revision date. Material changes should be described plainly rather than
+        buried in legal wording.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
