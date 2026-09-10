@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { canonicalUrl } from '../../lib/site';
+
+const title = 'Terms of Use | Stripchat Tokens Guide';
+const description =
+  'Terms of use for this independent educational website: educational content only, no affiliation, and acceptable use of the site.';
+const path = 'terms/';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('') },
+      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: canonicalUrl(path) },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs current="Terms of Use" />
+  <section class="article-hero" aria-labelledby="page-title">
+    <div class="container article-body">
+      <h1 id="page-title">Terms of Use</h1>
+      <div class="notice notice-warning" role="note">
+        <p class="notice-title"><span class="notice-icon" aria-hidden="true">⚠</span> Template notice</p>
+        <p>
+          This is a concise general template. The site operator should have it
+          reviewed and adapted to the operator's jurisdiction and actual
+          business practices before treating it as final.
+        </p>
+      </div>
+      <p><strong>Last updated:</strong> September 10, 2026.</p>
+      <h2>Educational content only</h2>
+      <p>
+        All content on this website is provided for general educational and
+        informational purposes. It is not legal advice, financial advice, or
+        official documentation of any platform. Platform features, prices,
+        policies, and procedures change over time; visitors should verify
+        important details against current official sources.
+      </p>
+      <h2>Independence</h2>
+      <p>
+        This website is independent and is not affiliated with, sponsored by,
+        endorsed by, or officially connected with Stripchat. References to
+        third-party names are descriptive and informational only.
+      </p>
+      <h2>Acceptable use</h2>
+      <p>
+        Visitors agree not to misuse this website, including by attempting to
+        disrupt its operation, misrepresenting its content as official
+        platform guidance, or using its content to facilitate fraud, phishing,
+        or violations of any platform's terms or applicable law.
+      </p>
+      <h2>No unlawful content</h2>
+      <p>
+        This site promotes legal and legitimate methods only. It does not
+        provide instructions for hacking, fraud, unauthorized access, payment
+        abuse, or circumventing platform or payment rules, and visitors must
+        not use the site for such purposes.
+      </p>
+      <h2>External links and embeds</h2>
+      <p>
+        The site may reference third-party resources, such as an embedded
+        video. Third-party content is governed by its own terms and policies,
+        and the operator does not control it.
+      </p>
+      <h2>Changes</h2>
+      <p>
+        These terms may be updated as the site evolves. Continued use of the
+        site after changes constitutes acceptance of the updated terms.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

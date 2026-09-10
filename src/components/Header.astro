@@ -1,0 +1,56 @@
+---
+import { PRIMARY_NAV, SITE_TAGLINE, withBase } from '../lib/site';
+
+interface Props {
+  currentNav?: string;
+}
+
+const { currentNav = '' } = Astro.props;
+---
+
+<div class="age-bar" role="note" aria-label="Age notice">
+  <div class="container">
+    <strong>18+ notice:</strong>
+    <span>This site discusses an adult-oriented platform and is intended for adult readers only.</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={withBase('')} aria-label="Stripchat Tokens Guide — home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span class="brand-text">
+        <span class="brand-name">Stripchat Tokens Guide</span>
+        <span class="brand-sub">{SITE_TAGLINE}</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      <span aria-hidden="true">☰</span> Menu
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {PRIMARY_NAV.map((item) => (
+          <li>
+            <a
+              href={withBase(item.href)}
+              aria-current={currentNav === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary btn-sm header-cta" href={withBase('legal-ways-to-get-stripchat-tokens/')}>
+      Read the Legal Methods Guide
+    </a>
+  </div>
+</header>

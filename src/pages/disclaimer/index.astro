@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { canonicalUrl } from '../../lib/site';
+
+const title = 'Disclaimer | Stripchat Tokens Guide';
+const description =
+  'Disclaimer: independent educational content with no platform affiliation, no guarantees, and no explicit material. Intended for adults 18+.';
+const path = 'disclaimer/';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('') },
+      { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: canonicalUrl(path) },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs current="Disclaimer" />
+  <section class="article-hero" aria-labelledby="page-title">
+    <div class="container article-body">
+      <h1 id="page-title">Disclaimer</h1>
+      <div class="notice notice-warning" role="note">
+        <p class="notice-title"><span class="notice-icon" aria-hidden="true">⚠</span> Template notice</p>
+        <p>
+          This is a concise general template. The site operator should have it
+          reviewed and adapted to the operator's jurisdiction and actual
+          business practices before treating it as final.
+        </p>
+      </div>
+      <p><strong>Last updated:</strong> September 10, 2026.</p>
+      <h2>Independence and trademarks</h2>
+      <p>
+        This website is independent and is not affiliated with, sponsored by,
+        endorsed by, or officially connected with Stripchat. Any third-party
+        names, including &ldquo;Stripchat&rdquo; and &ldquo;Stripchat
+        Tokens,&rdquo; are used for descriptive and informational purposes only
+        and remain the property of their respective owners.
+      </p>
+      <h2>No guarantees</h2>
+      <p>
+        The site makes no guarantees about token prices, payment availability,
+        processing times, support outcomes, or search-engine performance. It
+        offers no earnings, no investment advice, and no promise of any
+        particular result from following its educational guidance.
+      </p>
+      <h2>Verify official sources</h2>
+      <p>
+        Platform terms, help content, and billing procedures change. Before
+        acting on anything important \u2014 especially anything involving money
+        or account access \u2014 confirm the current facts in the
+        platform&rsquo;s official terms, help center, or billing support.
+      </p>
+      <h2>Adults only, no explicit content</h2>
+      <p>
+        This site discusses an adult-oriented platform and is intended for
+        readers aged 18 or older. It contains no explicit sexual content and
+        does not encourage violating platform terms, payment rules, or
+        applicable law.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
